@@ -1707,15 +1707,6 @@ h2 {
   font-size: 0.76rem;
   margin: 0;
 }
-.placeholder-note {
-  color: var(--muted);
-  font-size: 0.72rem;
-  margin: 25px 0 0;
-}
-.placeholder-note i {
-  color: var(--primary);
-  margin-left: 5px;
-}
 .event-filters-card {
   padding: 24px;
   margin-top: 28px;

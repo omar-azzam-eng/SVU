@@ -1,17 +1,19 @@
 const NAV_ITEMS = [
-  { label: 'الرئيسية', href: 'index.html', page: 'home' },
-  { label: 'الفعاليات', href: 'events.html', page: 'events' },
-  { label: 'عن البوابة', href: 'about.html', page: 'about' },
-  { label: 'تواصل معنا', href: 'contact.html', page: 'contact' },
+  { label: "الرئيسية", href: "index.html", page: "home" },
+  { label: "الفعاليات", href: "events.html", page: "events" },
+  { label: "عن البوابة", href: "about.html", page: "about" },
+  { label: "تواصل معنا", href: "contact.html", page: "contact" },
 ];
 
 const renderHeader = () => {
-  const currentPage = document.body.dataset.page || 'home';
-  const header = document.querySelector('#site-header');
+  const currentPage = document.body.dataset.page || "home";
+  const header = document.querySelector("#site-header");
   if (!header) return;
-  const navLinks = NAV_ITEMS.map(({ label, href, page }) => `
-    <li class="nav-item"><a class="nav-link ${currentPage === page ? 'active' : ''}" ${currentPage === page ? 'aria-current="page"' : ''} href="${href}">${label}</a></li>
-  `).join('');
+  const navLinks = NAV_ITEMS.map(
+    ({ label, href, page }) => `
+    <li class="nav-item"><a class="nav-link ${currentPage === page ? "active" : ""}" ${currentPage === page ? 'aria-current="page"' : ""} href="${href}">${label}</a></li>
+  `,
+  ).join("");
   header.innerHTML = `
     <header class="site-header"><nav class="navbar navbar-expand-lg" aria-label="التنقل الرئيسي"><div class="container">
       <a class="navbar-brand" href="index.html" aria-label="دليل فعاليات الجامعة الافتراضية السورية"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span class="brand-text"><strong>SVU</strong><small>دليل الفعاليات</small></span></a>
@@ -21,14 +23,14 @@ const renderHeader = () => {
 };
 
 const renderFooter = () => {
-  const footer = document.querySelector('#site-footer');
+  const footer = document.querySelector("#site-footer");
   if (!footer) return;
   footer.innerHTML = `
     <footer class="site-footer"><div class="container"><div class="row g-4 justify-content-between">
-      <div class="col-lg-4"><a class="navbar-brand footer-brand" href="index.html"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span class="brand-text"><strong>SVU</strong><small>دليل الفعاليات</small></span></a><p class="footer-copy">دليل تعليمي يساعدك على اكتشاف الفعاليات والتجارب الجامعية.</p></div>
+      <div class="col-lg-4"><a class="navbar-brand footer-brand" href="index.html"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span class="brand-text"><strong>SVU</strong><small>دليل الفعاليات</small></span></a><p class="footer-copy">دليل يساعدك على اكتشاف الفعاليات والتجارب الجامعية.</p></div>
       <div class="col-6 col-lg-2"><h3>استكشف</h3><ul class="footer-links"><li><a href="events.html">الفعاليات</a></li><li><a href="about.html">عن البوابة</a></li><li><a href="contact.html">تواصل معنا</a></li></ul></div>
-      <div class="col-6 col-lg-3"><h3>ابقَ قريباً</h3><p class="footer-copy">تابع آخر أخبار المجتمع والفعاليات الجديدة.</p><div class="social-row footer-social"><a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a></div></div>
-    </div><div class="footer-bottom"><span>© 2026 دليل فعاليات الجامعة الافتراضية السورية. مشروع BWP401 تعليمي.</span><span>ليس خدمة رسمية أو نظام حجز فعلي</span></div></div></footer>`;
+      <div class="col-6 col-lg-3"><h3>ابقَ قريباً</h3><p class="footer-copy">تابع آخر أخبار المجتمع والفعاليات الجديدة.</p><div class="social-row footer-social"><a href="https://github.com/boienimazen-droid" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a></div></div>
+    </div><div class="footer-bottom"><span>© 2026 دليل فعاليات الجامعة الافتراضية السورية.</span><span>مازن البعيني · Mazen_295595</span></div></div></footer>`;
 };
 
 export const renderSiteShell = () => {
